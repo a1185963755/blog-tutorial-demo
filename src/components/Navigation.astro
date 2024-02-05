@@ -1,8 +1,21 @@
 ---
+const pageList = [
+  { title: "Home", href: "/" },
+  { title: "About", href: "/about/" },
+  { title: "Blog", href: "/blog/" },
+  { title: "Tags", href: "/tags/" },
+];
 ---
-<div class="nav-links">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
-  <a href="/tags/">Tags</a>
+
+<div class="nav-links w-full top-16 left-[48px] hidden m-0 sm:mx-auto sm:static sm:flex sm:justify-center" transition:animate="slide">
+  {
+    pageList.map((page) => (
+      <a
+        href={page.href}
+        class="block text-center py-[10px] no-underline text-[1.2rem] font-bold uppercase hover:bg-[#ff9776] focus::bg-[#ff9776] sm:inline-block sm:px-[20px] sm:py-[15px] dark:text-[#fff]"
+      >
+        {page.title}
+      </a>
+    ))
+  }
 </div>
